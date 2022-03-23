@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+body{font-family: 'Sofia Pro';background-color: #1d1d1d;}
+
+.box{width: 100%; padding: 100px 0 0 0;
+    .container{ width: 1060px; margin: 0 auto;
+        h1{font-weight: 500;font-size: 50px; color: #ffffff; text-align: center; margin: 0 0 30px 0;}
+
+        .formBox{ position: relative; background-color: #ffffff; padding: 50px; border-radius: 8px; overflow: hidden;
+            .title{display: inline-block; font-size: 34px; line-height: 41px; color: #1d1d1d;margin: 0 0 20px 0; padding: 0 0 10px 0; position: relative;
+                &::before{content: ""; width: 50%; height: 2px; background-color: #1d1d1d; position: absolute; left: 0; bottom: 0; display: flex;}
+            }
+            .inputUl{ display: flex; flex-wrap: wrap; margin: 0 0 20px 0;
+                .inputLi{margin: 0 0 10px 0; display: flex; width:100%;
+                    &.full{
+                        .inputBox{ width: 100%;padding: 0;}
+                       }
+                    &:last-child{margin: 0;}
+                    .inputBox{width: 50%; padding: 0 10px 0 0;
+                        &.error{
+                            input{border:1px solid red;
+                                &::placeholder{color: red;}
+                                &:focus{ border:1px solid #ff8383;
+                                    &::placeholder{color: #ff8383;}
+                                }
+                            }
+                            textarea{border:1px solid red;
+                                &::placeholder{color: red;}
+                                &:focus{ border:1px solid #ff8383;
+                                    &::placeholder{color: #ff8383;}
+                                }
+                            }
+                        }
+                        &:nth-child(2n){padding: 0;}
+                        input{width: 100%; background: #FFFFFF; border:1px solid #d4d4d4;  border-radius: 5px; height: 50px; padding: 0 15px; font-weight: 400; font-size: 16px; line-height: 14px;  display: flex; align-items: center; color: #1d1d1d; font-family: 'Sofia Pro';
+                            &::placeholder{color: #868686;}
+                            &:focus{ border:1px solid #a8a8a8;}
+                        }
+                        textarea{width: 100%;height: 150px; background: #FFFFFF; border:1px solid #d4d4d4;  border-radius: 5px;  resize: none; padding: 15px; font-weight: 400; font-size: 16px; line-height: 22px; color: #1d1d1d; font-family: 'Sofia Pro';
+                            &::placeholder{color: #868686;}
+                            &:focus{ border:1px solid #a8a8a8;}
+                        }
+                    }
+                    .checkColon{margin: 0 0 15px 0;position: relative; padding: 0 0 0 30px;
+                        &:last-child{margin: 0;}
+                        &.error{
+                                label{color: red;
+                                    &::after{background-image: url(../img/checkbox-error.png);}
+                                    a{color: red;font-weight: 600;}
+                                }
+                            }
+                        .inputCheckBox{width:20px; height:20px; position: absolute; top:2px; left:0px; opacity: 0;}
+                        label{font-size: 14px;color: #1d1d1d; cursor: pointer;line-height: 24px;
+                            &:after {content: ""; background-image: url(../img/checkbox-passive.png); width:20px; height: 20px; border-radius: 3px; position: absolute; top:2px; left: 0; z-index: 1; background-repeat: no-repeat;}
+                            &:before {content: ""; background-image: url(../img/checkbox-active.png); width:20px; height: 20px; border-radius: 3px; background-repeat: no-repeat; position: absolute;  top:2px; left: 0;z-index: 2; opacity: 0;  visibility: hidden; transition: all .2s ease-in-out;}
+                            a{text-decoration: underline; color: #A334FB;}
+                        }
+                        .inputCheckBox:checked + label{
+                            &:before{opacity: 1;  visibility: visible;}
+                        }
+                    }
+                }
+            }
+
+            .errorMessage{width: 100%; margin: 0 0 15px 0; opacity: 0; visibility: hidden;
+                &.active{opacity: 1; visibility: visible;}
+                span{color: red; font-size: 14px; line-height: 20px;}
+            }
+
+            .buttonBox {display: flex; justify-content: flex-end;
+                a{background-color: #1d1d1d; color: #ffffff; padding: 15px 45px; border-radius: 8px; position: relative; overflow: hidden; 
+                    &::before{content: ""; width: 0; height: 100%; background-color: #A334FB; position: absolute; bottom: 0; right: 0; left: auto; transition: all 0.3s ease-in-out; }
+                    &:hover{
+                        &::before{width: 100%;right: auto; left: 0;}
+                    }
+                    span{color: #ffffff;z-index: 2; position: relative;}
+                }
+            }
+            .successMask{position: absolute; top:0; left: 0; width: 100%; height: 100%; background:#ffffff; z-index: 3; display: none; justify-content: center; align-items: center; flex-direction: column; padding: 30px;
+                &.active{display: flex;}
+                .iconBox{margin: 0 0 30px 0}
+                .resTitle{font-size: 30px; line-height: 38px; color: #1d1d1d;text-align: center; margin: 0 0 10px 0;}
+                .resDesc{font-size: 16px; line-height: 20px; color: #1d1d1d;text-align: center;}
+            }
+        }
+
+        .devLinkBox{width: 100%; display: flex; justify-content: center; padding: 30px 0;
+            a{font-weight: 500; color: #ffffff; font-size: 20px; line-height: 26px;}
+        }
+    }
+}
+
+@media screen and (max-width: 1199px){
+    .box{
+        .container{ width: 100%; padding: 0 30px;}
+    }
+}
+@media screen and (max-width: 991px){
+    .box{padding: 75px 0 0 0;
+        .container{
+        h1{font-size: 40px;}
+        .formBox{padding: 30px;}
+        }
+    }
+}
+@media screen and (max-width: 767px){
+    .box{padding: 50px 0 0 0;
+        .container{padding: 0 15px;
+            h1{font-size: 30px;}
+            .formBox{padding: 20px 15px;
+                .title{font-size: 26px; line-height: 30px;}
+                .inputUl{margin: 0 0 10px 0;
+                    .inputLi{flex-direction: column; margin: 0;
+                        .inputBox{width: 100%;padding: 0; margin: 0 0 10px 0;}
+                    }
+                }
+            }
+        }
+    }
+}

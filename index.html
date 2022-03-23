@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/_reset.css" />
+    <link rel="stylesheet" href="assets/css/_font.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <title>Form and Validations</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="container">
+        <h1>Form and Validations</h1>
+
+        <div class="formBox">
+          <form id="form" autocomplete="off" novalidate="novalidate">
+            <div class="title">Send Message</div>
+            <ul class="inputUl">
+              <li class="inputLi">
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="form_name"
+                    id="form_name"
+                    class="form_name"
+                    placeholder="Name"
+                    autocomplete="chrome-off"
+                    required=""
+                  />
+                </div>
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="form_surname"
+                    id="form_surname"
+                    class="form_surname"
+                    placeholder="Surname"
+                    autocomplete="chrome-off"
+                    required=""
+                  />
+                </div>
+              </li>
+              <li class="inputLi">
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="form_phone"
+                    id="form_phone"
+                    class="form_phone"
+                    placeholder="Phone"
+                    autocomplete="chrome-off"
+                    required=""
+                    maxlength="15"
+                  />
+                </div>
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="form_email"
+                    id="form_email"
+                    class="form_email"
+                    placeholder="E-mail"
+                    autocomplete="chrome-off"
+                    required=""
+                  />
+                </div>
+              </li>
+              <li class="inputLi full">
+                <div class="inputBox">
+                  <input
+                    type="text"
+                    name="form_subject"
+                    id="form_subject"
+                    class="form_subject"
+                    placeholder="Subject"
+                    autocomplete="chrome-off"
+                    required=""
+                  />
+                </div>
+              </li>
+              <li class="inputLi full">
+                <div class="inputBox">
+                  <textarea
+                    id="form_message"
+                    name="form_message"
+                    class="form_message"
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+              </li>
+              <li class="inputLi full">
+                <div class="checkColon">
+                  <input
+                    type="checkbox"
+                    class="inputCheckBox"
+                    id="checkbox_communication"
+                    name="checkbox_communication"
+                    value="0"
+                  />
+                  <label for="checkbox_communication">
+                    <a href="javascript:;">Lorem</a>
+                    ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+                    ullam.
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <div class="errorMessage">
+              <span>*Please fill in the information completely.</span>
+            </div>
+            <div class="buttonBox sendForm">
+              <a href="javascript:;">
+                <span>Send</span>
+              </a>
+            </div>
+          </form>
+          <div class="successMask">
+            <div class="iconBox">
+              <img src="assets/img/success.jpg" alt="Succes" />
+            </div>
+            <div class="resTitle">Thank you!</div>
+            <div class="resDesc">Your request has been received.</div>
+          </div>
+        </div>
+
+        <div class="devLinkBox">
+          <a href="https://www.linkedin.com/in/efeegrekci/" target="_blank"
+            >Efe Eğrekçi</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/vendors/jquery.js"></script>
+    <script src="assets/js/vendors/jquery-validation-core.js"></script>
+    <script src="assets/js/vendors/maskinput.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
