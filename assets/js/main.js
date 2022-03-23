@@ -14,7 +14,7 @@ $(document).ready(function () {
     // Phone Mask
 
     // Validation and Click
-    $('.buttonBox.sendForm').click(function () {
+    $('.buttonBox.sendForm a').click(function () {
         $(".checkColon .inputCheckBox").each(function () {
             if ($(this).prop("checked") == true) {
                 $(this).parent(".checkColon").removeClass("error")
